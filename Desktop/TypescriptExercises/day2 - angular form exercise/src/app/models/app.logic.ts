@@ -34,7 +34,7 @@ export class Logic {
     }
     fetchIndex(prd:Product): number
     {
-      return this.products.map(function(e) { return e.ProductId }).indexOf(prd.ProductId);
+      return this.products.findIndex(function(e){e.ProductId==prd.ProductId})
     }
     updateProduct(prd:Product): Array<Product>{
       let indexToUpdate = this.fetchIndex(prd)
@@ -55,7 +55,7 @@ export class Logic {
     deleteProducts(prd: Product): Array<Product>
     {
       debugger
-      let indexToDelete = this.products.map(function(e) { return e.ProductId }).indexOf(prd.ProductId);
+      let indexToDelete = this.fetchIndex(prd)
       this.products.splice(indexToDelete, 1)
       return this.products
     }
