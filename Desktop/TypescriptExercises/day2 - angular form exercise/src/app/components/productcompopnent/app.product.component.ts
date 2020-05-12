@@ -37,6 +37,17 @@ export class ProductComponent implements OnInit {
     this.products = this.logic.saveProducts(this.product);
     console.log(JSON.stringify(this.products));
   }
+  update(): void {
+    this.products = this.logic.updateProduct(this.product)
+  }
+  delete(prd: Product): void {
+    this.products = this.logic.deleteProducts(prd)
+    console.log(JSON.stringify(this.products))
+  }
+  search(): void{
+    debugger
+    this.products = this.logic.searchProducts(this.searchText)
+  }
   sortProducts(): void{
     this.products.sort(function(a,b){
       return a.ProductId - b.ProductId
