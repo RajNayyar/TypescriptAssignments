@@ -55,4 +55,18 @@ export class Logic {
       this.products.splice(indexToDelete, 1)
       return this.products
     }
+    sortProductsLexically() : Array<Product>
+    {
+      this.products.sort(function(a,b){
+        return a.ProductName.localeCompare(b.ProductName);
+    })
+    return this.products
+    }
+    reverseSortProductsLexically() : Array<Product>
+    {
+      this.products.sort(function(a,b){
+        return b.ProductName.localeCompare(a.ProductName);
+    })
+    return this.products
+    }
 }
