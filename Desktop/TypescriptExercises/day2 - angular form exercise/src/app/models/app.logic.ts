@@ -34,7 +34,7 @@ export class Logic {
     }
     fetchIndex(prd:Product): number
     {
-      return this.products.findIndex(function(e){e.ProductId==prd.ProductId})
+      return this.products.findIndex(x => x.ProductId==prd.ProductId)
     }
     updateProduct(prd:Product): Array<Product>{
       let indexToUpdate = this.fetchIndex(prd)
@@ -45,16 +45,12 @@ export class Logic {
         }
       else
       {
-        this.products[indexToUpdate].Category = prd.Category
-        this.products[indexToUpdate].Price = prd.Price
-        this.products[indexToUpdate].ProductId = prd.ProductId
-        this.products[indexToUpdate].ProductName = prd.ProductName
+        this.products.splice(indexToUpdate, 1, prd)
       }
       return this.products
     }
     deleteProducts(prd: Product): Array<Product>
     {
-      debugger
       let indexToDelete = this.fetchIndex(prd)
       this.products.splice(indexToDelete, 1)
       return this.products

@@ -50,12 +50,12 @@ export class ProductComponent implements OnInit {
   }
   sortProducts(): void{
     this.products.sort(function(a,b){
-      return a.ProductId - b.ProductId
+      return a.ProductName.length - b.ProductName.length
   })
 }
   reverseSortProducts(): void {
     this.products.sort(function(a,b){
-      return b.ProductId - a.ProductId
+      return b.ProductName.length - a.ProductName.length
   })}
   getSelectedProduct(p: Product): void {
       this.product = Object.assign({}, p);
