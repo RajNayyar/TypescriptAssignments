@@ -50,13 +50,14 @@ export class ProductComponent implements OnInit {
   }
   sortProducts(): void{
     this.products.sort(function(a,b){
-      return a.ProductName.length - b.ProductName.length
+      return a.ProductName.localeCompare(b.ProductName);
   })
 }
   reverseSortProducts(): void {
     this.products.sort(function(a,b){
-      return b.ProductName.length - a.ProductName.length
-  })}
+      return b.ProductName.localeCompare(a.ProductName);
+  })
+}
   getSelectedProduct(p: Product): void {
       this.product = Object.assign({}, p);
   }
