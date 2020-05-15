@@ -10,8 +10,8 @@ import { SimpleElementComponent } from './litelementcomponents/app.simple.elemen
 
 // import all LitElements from its path
 import './litelementapp/app.simpleelement.litelement';
-
-
+import { DemoLitElementComponent } from './demo-lit-element/demo-lit-element.component';
+import {demoLit} from './demo-lit-class/demoLit'
 
 
 // imports: array that imports all standard Angular moaulds and custom
@@ -36,7 +36,8 @@ import './litelementapp/app.simpleelement.litelement';
     AppComponent, ProductComponent,
     ProductReactiveFormComponent,
     TableDirectiveComponent,
-    SimpleElementComponent
+    SimpleElementComponent,
+    DemoLitElementComponent
   ],
   imports: [
     BrowserModule, FormsModule, ReactiveFormsModule,
